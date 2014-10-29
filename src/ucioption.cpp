@@ -49,7 +49,6 @@ bool CaseInsensitiveLess::operator() (const string& s1, const string& s2) const 
   return std::lexicographical_compare(s1.begin(), s1.end(), s2.begin(), s2.end(), ci_less);
 }
 
-
 /// init() initializes the UCI options to their hard-coded default values
 
 void init(OptionsMap& o) {
@@ -67,6 +66,8 @@ void init(OptionsMap& o) {
   o["Minimum Thinking Time"] << Option(20, 0, 5000);
   o["Slow Mover"]            << Option(80, 10, 1000);
   o["UCI_Chess960"]          << Option(false);
+  o["passed_mg"]             << Option(17000, 0, 100000);
+  o["passed_eg"]             << Option(7000, 0, 100000);
 }
 
 

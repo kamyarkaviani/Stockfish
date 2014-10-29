@@ -582,7 +582,7 @@ namespace {
         int rr = r * (r - 1);
 
         // Base bonus based on rank
-        Value mbonus = Value(17 * rr), ebonus = Value(7 * (rr + r + 1));
+        Value mbonus = Value(int(Options["passed_mg"]) * rr / 1000), ebonus = Value(int(Options["passed_eg"]) * (rr + r + 1) / 1000);
 
         if (rr)
         {
